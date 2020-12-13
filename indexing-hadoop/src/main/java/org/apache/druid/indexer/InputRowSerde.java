@@ -119,6 +119,9 @@ public class InputRowSerde
         case DOUBLE:
           typeHelper = DOUBLE_HELPER;
           break;
+        case JSONLIST:
+          typeHelper = DOUBLE_HELPER;
+          break;
         default:
           throw new IAE("Invalid type: [%s]", dimensionSchema.getValueType());
       }

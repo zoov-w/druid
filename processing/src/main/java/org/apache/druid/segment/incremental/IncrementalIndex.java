@@ -668,6 +668,7 @@ public abstract class IncrementalIndex<AggregatorType> extends AbstractIndex imp
         DimensionIndexer indexer = desc.getIndexer();
         Object dimsKey = null;
         try {
+          //
           dimsKey = indexer.processRowValsToUnsortedEncodedKeyComponent(
               row.getRaw(dimension),
               true

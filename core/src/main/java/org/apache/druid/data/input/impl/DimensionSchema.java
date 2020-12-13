@@ -42,6 +42,7 @@ import java.util.Objects;
     @JsonSubTypes.Type(name = DimensionSchema.FLOAT_TYPE_NAME, value = FloatDimensionSchema.class),
     @JsonSubTypes.Type(name = DimensionSchema.DOUBLE_TYPE_NAME, value = DoubleDimensionSchema.class),
     @JsonSubTypes.Type(name = DimensionSchema.SPATIAL_TYPE_NAME, value = NewSpatialDimensionSchema.class),
+    @JsonSubTypes.Type(name = DimensionSchema.JSONLIST_TYPE_NAME, value = NewSpatialDimensionSchema.class),
 })
 public abstract class DimensionSchema
 {
@@ -50,6 +51,7 @@ public abstract class DimensionSchema
   public static final String FLOAT_TYPE_NAME = "float";
   public static final String SPATIAL_TYPE_NAME = "spatial";
   public static final String DOUBLE_TYPE_NAME = "double";
+  public static final String JSONLIST_TYPE_NAME = "jsonlist";
   private static final EmittingLogger log = new EmittingLogger(DimensionSchema.class);
 
 
@@ -66,6 +68,7 @@ public abstract class DimensionSchema
     LONG,
     STRING,
     DOUBLE,
+    JSONLIST,
     @SuppressWarnings("unused") // used in org.apache.druid.segment.column.ValueType
     COMPLEX;
 
